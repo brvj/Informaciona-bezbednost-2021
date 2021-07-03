@@ -4,7 +4,9 @@ import ib.project.model.Authority;
 import ib.project.repository.AuthorityRepository;
 import ib.project.service.interfaces.IAuthorityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AuthorityService implements IAuthorityService {
 
     @Autowired

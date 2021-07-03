@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
+import ib.project.certificate.CertificateGenerator;
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +37,10 @@ public class DemoApplication {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		File file = new File("./data/root.jks");
+		if(!file.exists()) CertificateGenerator.generateMyRootCA();
+		else System.out.println("Root CA already created");
 	}
 }
  
